@@ -2,7 +2,8 @@ import React, { FC, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import './Counter.scss'
 
-import { inc, dec, del } from '../../redux/actions'
+// import { inc, dec, del } from '../../redux/actions'
+import { inc, dec, del } from '../../redux/counterSlice'
 import { IStore } from '../../models/common'
 
 interface CounterProps {

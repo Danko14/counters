@@ -4,8 +4,10 @@ import { useEffect, useState } from 'react'
 
 import { configureStore } from '@reduxjs/toolkit'
 import { useSelector, useDispatch } from 'react-redux'
-import reducer from './redux/reducer'
-import { add, incId } from './redux/actions'
+// import reducer from './redux/reducer'
+import reducer from './redux/counterSlice'
+// import { add, incId } from './redux/actions'
+import { add, incId } from './redux/counterSlice'
 
 import Counter from './components/Counter/Counter.tsx'
 

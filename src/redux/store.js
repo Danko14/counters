@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
-import reducer from './reducer'
+// import reducer from './reducer'
+import reducer from './counterSlice'
 
 const stringMiddleware = () => (next) => (action) => {
     if (typeof action === 'string') {
