@@ -2,14 +2,12 @@ import logo from './logo.svg'
 import './App.css'
 import { useEffect, useState } from 'react'
 
-import { createStore } from 'redux'
+import { configureStore } from '@reduxjs/toolkit'
 import { useSelector, useDispatch } from 'react-redux'
 import reducer from './redux/reducer'
 import { add, incId } from './redux/actions'
 
 import Counter from './components/Counter/Counter.tsx'
-
-const store = createStore(reducer)
 
 function App() {
     const counters = useSelector((state) => state.counters)
@@ -28,7 +26,7 @@ function App() {
             sum = 0
         }
 
-        dispatch(add(maxId + 1, sum))
+        dispatch(add({ id: maxId + 1, value: sum }))
         dispatch(incId())
     }
 

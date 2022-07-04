@@ -1,8 +1,7 @@
-export const inc = (id) => ({ type: 'INC', payload: id })
-export const dec = (id) => ({ type: 'DEC', payload: id })
-export const add = (id, count) => ({
-    type: 'ADD',
-    payload: { id: id, value: count },
-})
-export const del = (id) => ({ type: 'DEL', payload: id })
-export const incId = () => ({ type: 'INC_ID' })
+import { createAction } from '@reduxjs/toolkit'
+
+export const inc = createAction('INC')
+export const dec = createAction('DEC')
+export const add = createAction('ADD')
+export const del = createAction('DEL')
+export const incId = createAction('INC_ID')
