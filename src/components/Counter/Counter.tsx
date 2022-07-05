@@ -20,6 +20,8 @@ const Counter: FC<CounterProps> = ({ count, id }) => {
         (state: IStore) => state.counters.find((x) => x.id == id)?.value
     )
 
+    const counters = useSelector((state: IStore) => state.counters)
+
     const fourth = useSelector((state: IStore) => {
         const idx = state.counters.findIndex((x) => x.id == id)
         return (idx + 1) % 4 === 0 && idx !== 0
@@ -37,7 +39,7 @@ const Counter: FC<CounterProps> = ({ count, id }) => {
         }, 1000)
 
         return () => clearInterval(timer)
-    })
+    }, [counters.length])
 
     return (
         <div className='Counter'>
